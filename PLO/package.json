@@ -1,0 +1,40 @@
+{
+  "name": "nodejs-poker-tools",
+  "version": "0.0.1",
+  "description": "Software per gestire bankroll e strategie/percentuali per il gioco del poker.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo 'ciao ciao' && exit 0",
+    "dev": "nodemon --ignore combos.json index.js",
+    "setup": "chmod +x setup.sh && bash ./setup.sh",
+    "backup": "chmod +x backup.sh && bash ./backup.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibonemo/nodejs-poker-tools.git"
+  },
+  "keywords": [
+    "poker",
+    "bankroll",
+    "strategy",
+    "chip-management",
+    "hand-analysis",
+    "tournament",
+    "cash-game",
+    "game-theory",
+    "odds-calculation",
+    "decision-making",
+    "grinding",
+    "bankroll-discipline"
+  ],
+  "author": "Andriani Claudio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibonemo/nodejs-poker-tools/issues"
+  },
+  "homepage": "https://github.com/fibonemo/nodejs-poker-tools#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
