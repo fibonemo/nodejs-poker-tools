@@ -1,7 +1,7 @@
-source "./colors.cfg" || { 
-    echo -e "!!!![ERRORE] colors.sh non trovato! Il backup potrebbe non funzionare correttamente." 
-    exit 1 
-}
+# source "./colors.cfg" || { 
+#     echo -e "!!!![ERRORE] colors.sh non trovato! Il backup potrebbe non funzionare correttamente." 
+#     exit 1 
+# }
 
 # Funzione di log per errori
 log_error() {

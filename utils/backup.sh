@@ -1,13 +1,13 @@
 
-source colors.sh --debug || {
-    echo -e "!!!![ERRORE] colors.sh non trovato!"
-    exit 1
-}
+# source colors.sh --debug || {
+#     echo -e "!!!![ERRORE] colors.sh non trovato!"
+#     exit 1
+# }
 
-source config.cfg || { 
-    log_error -e "${RED}[ERRORE] config.cfg non trovato! Il backup potrebbe non funzionare correttamente.${NC}" 
-    exit 1 
-}
+# source config.cfg || { 
+#     log_error -e "${RED}[ERRORE] config.cfg non trovato! Il backup potrebbe non funzionare correttamente.${NC}" 
+#     exit 1 
+# }
 
 should_exclude() {
     local file="$1"

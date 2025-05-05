@@ -8,7 +8,6 @@ fi
 
 # Carica le dipendenze
 source "./utils/sources.sh"
-safe_source "./colors.sh" "./backup.sh"
 
 # Controlla se il nome del progetto è stato passato
 PROJECT_DIR=${1:-"PLO"}  # Usa 'PLO' come default se non viene fornito un nome
@@ -35,14 +34,13 @@ fi
 log_info "Creazione della struttura del progetto: $PROJECT_DIR..."
 mkdir -p "$PROJECT_DIR/utils" "$PROJECT_DIR/data"
 
-declare -a files=("index.js" "deck.js" "suitedness.js" "gap.js" "betSizing.js" "feedbackAI.js"
-                  "utils/mathUtils.js" "utils/scraping.js" "data/hands.json" "data/stats.json")
+# declare -a files=("index.js" "deck.js" "suitedness.js" "gap.js" "betSizing.js" "feedbackAI.js"
+#                   "utils/mathUtils.js" "utils/scraping.js" "data/hands.json" "data/stats.json")
 
-for file in "${files[@]}"; do
-    touch "$PROJECT_DIR/$file" && log_success "Creato: $PROJECT_DIR/$file"
-done
+# for file in "${files[@]}"; do
+#     touch "$PROJECT_DIR/$file" && log_success "Creato: $PROJECT_DIR/$file"
+# done
 
-# Inserisci il codice nei file principali
 cat <<EOF > "$PROJECT_DIR/index.js"
 import generateDeck from "./deck.js";
 
@@ -102,9 +100,10 @@ cat <<EOF > "$PROJECT_DIR/package.json"
   "type": "module",
   "scripts": {
     "test": "echo 'ciao ciao' && exit 0",
-    "dev": "nodemon --ignore combos.json index.js",
-    "setup": "chmod +x setup.sh && bash ./setup.sh",
-    "backup": "chmod +x backup.sh && bash ./backup.sh"
+    "_dev": "nodemon --ignore combos.json index.js",
+    "dev": "nodemon index.js",
+    "_setup": "chmod +x setup.sh && bash ./setup.sh",
+    "_backup": "chmod +x backup.sh && bash ./backup.sh"
   },
   "repository": {
     "type": "git",
