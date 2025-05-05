@@ -10,7 +10,7 @@ fi
 source "./utils/sources.sh"
 
 # Controlla se il nome del progetto è stato passato
-PROJECT_DIR=${1:-"PLO"}  # Usa 'PLO' come default se non viene fornito un nome
+PROJECT_DIR=${PROJECT_DIR:-"PLO"}  # Usa 'PLO' come default se non viene fornito un nome
 
 # Verifica validità del nome del progetto
 if [[ ! "$PROJECT_DIR" =~ ^[a-zA-Z0-9_]+$ ]]; then
@@ -32,7 +32,8 @@ fi
 
 # Creazione della struttura
 log_info "Creazione della struttura del progetto: $PROJECT_DIR..."
-mkdir -p "$PROJECT_DIR/utils" "$PROJECT_DIR/data"
+mkdir -p "$PROJECT_DIR"
+# mkdir -p "$PROJECT_DIR/utils" "$PROJECT_DIR/data"
 
 # declare -a files=("index.js" "deck.js" "suitedness.js" "gap.js" "betSizing.js" "feedbackAI.js"
 #                   "utils/mathUtils.js" "utils/scraping.js" "data/hands.json" "data/stats.json")
@@ -41,6 +42,7 @@ mkdir -p "$PROJECT_DIR/utils" "$PROJECT_DIR/data"
 #     touch "$PROJECT_DIR/$file" && log_success "Creato: $PROJECT_DIR/$file"
 # done
 
+log_info "Creazione index.js, deck.js, score.js e package.json..."
 cat <<EOF > "$PROJECT_DIR/index.js"
 import generateDeck from "./deck.js";
 
@@ -137,6 +139,7 @@ EOF
 
 cd $PROJECT_DIR || exit 1
 
+log_info "Installazione delle dipendenze..."
 npm i
 
 log_success "Setup completato con successo! 🚀"

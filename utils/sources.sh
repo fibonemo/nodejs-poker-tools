@@ -14,7 +14,7 @@ cd "/d/nodejs-poker-tools/"
 # Carica le dipendenze principali
 safe_source "./utils/colors.sh"
 safe_source "./config.cfg"
-safe_source "./colors.sh"
+# safe_source "./colors.sh"
 safe_source "./utils/grant_permissions.sh"
 safe_source "./utils/backup.sh"
 
