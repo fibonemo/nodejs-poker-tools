@@ -150,7 +150,7 @@ function calculatePairScore(pair) {
 module.exports = { evaluatePLOHand, calculatePairScore };
 EOF
 
-cat <<EOF > "$dir/plo_start.sh"
+cat <<EOF > "plo_start.sh"
 #!/bin/bash
 pwd
 EOF
