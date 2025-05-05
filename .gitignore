@@ -1,6 +1,7 @@
 # ====================== CUSTOM GITIGNORE ======================
 node_modules
 backups
+*.lnk
 
 # ====================== NODEJS GITIGNORE ======================
 # Logs
