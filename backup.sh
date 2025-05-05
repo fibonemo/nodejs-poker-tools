@@ -12,12 +12,7 @@
 #     log_error -e "${RED}[ERRORE] $(pwd)/utils/backup.sh non trovato! Il backup potrebbe non funzionare correttamente.${NC}" 
 #     exit 1 
 # }
-source "./utils/source.sh" || { 
-    echo -e "!!!![ERRORE] $(pwd)/utils/source.sh non trovato! Il backup potrebbe non funzionare correttamente." 
-    exit 1 
-}
-
-safe_source "./config.cfg" "./utils/colors.sh" "./utils/backup.sh" "./colors.cfg"
+source "./utils/sources.sh" || exit 1
 backup_dir="${BACKUP_DIR}/$(date +'%d%m%Y_%H%M')"
 
 log_info "Cartella di backup: $backup_dir"

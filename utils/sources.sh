@@ -9,7 +9,7 @@ safe_source() {
 # Carica le dipendenze principali
 safe_source "./utils/colors.sh"
 safe_source "./config.cfg"
-safe_source "./utils/logging.sh"
+safe_source "./colors.sh"
 safe_source "./utils/backup.sh"
 
-export -f safe_source  # Permette di usarla in tutti gli script che includono `source.sh`
+export -f safe_source  # Permette di usarla in tutti gli script che includono `sources.sh`

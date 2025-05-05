@@ -11,10 +11,4 @@ source "./utils/colors.sh" || {
     exit 1 
 }
 
-if [[ $1 == "$COLORS_FLAG" ]]; then
-    colors_debug
-else
-    echo "Modalità debug colori non attivata. Usa --debug per attivarla."
-fi
-
 export RED GREEN YELLOW CYAN NC log_error log_warning log_success log_info

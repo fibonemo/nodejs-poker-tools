@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Controlla l'esistenza di `source.sh` prima di richiamarlo
-if [[ ! -f "./utils/source.sh" ]]; then
-    echo -e "\033[0;31m[ERRORE] $(pwd)/utils/source.sh non trovato!\033[0m"
+# Controlla l'esistenza di `sources.sh` prima di richiamarlo
+if [[ ! -f "./utils/sources.sh" ]]; then
+    echo -e "\033[0;31m[ERRORE] $(pwd)/utils/sources.sh non trovato!\033[0m"
     exit 1
 fi
 
 # Carica le dipendenze
-source "./utils/source.sh"
+source "./utils/sources.sh"
 safe_source "./colors.sh" "./backup.sh"
 
 # Controlla se il nome del progetto è stato passato
