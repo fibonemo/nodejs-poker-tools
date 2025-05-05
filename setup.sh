@@ -7,8 +7,9 @@ else
     echo "File di backup non trovato. Procedo con la configurazione."
 fi
 # Carica il file dei colori e delle funzioni di logging
-source colors.sh --debug || ( echo "Non esiste file colors.sh" ; exit 1 )
+source colors.sh || ( echo "Non esiste file colors.sh" ; exit 1 )
 
+# Carica il file di configurazione
 dir="PLO"
 
 # Controlla se la cartella esiste già

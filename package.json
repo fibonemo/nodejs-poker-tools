@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo 'ciao ciao' && exit 0",
     "dev": "nodemon --ignore combos.json index.js",
-    "setup": "chmod +x setup.sh && bash ./setup.sh"
+    "setup": "chmod +x setup.sh && bash ./setup.sh",
+    "backup": "chmod +x backup.sh && bash ./backup.sh"
   },
   "repository": {
     "type": "git",
