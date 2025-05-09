@@ -51,23 +51,33 @@ console.log(deck);
 EOF
 
 cat <<EOF > "$PROJECT_DIR/deck.js"
-const fibonacci = (n) => {
-    let a = 0, b = 1;
-    for (let i = 0; i < n; i++) {
-        [a, b] = [b, a + b];
-    }
-    return a;
-};
-
 const goldenRatio = 1.618;
 const suits = ["hearts", "diamonds", "clubs", "spades"];
-const ranks = [...Array(13).keys()].map(i => ({ rank: String(i+2), value: i+2 }));
+const ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 
-const generateDeck = () => suits.flatMap(suit => ranks.map(({ rank, value }) => ({
-    suit, rank, value, power: Math.round(fibonacci(value) * 0.13 * (["10", "J", "A"].includes(rank) ? goldenRatio : 1))
-})));
+// Assign numerical values to ranks
+const rankValues = {
+    "2": 1, "3": 1, "4": 2, "5": 3, "6": 5, "7": 8, "8": 13,
+    "9": 21, "10": 34, "J": 55, "Q": 89, "K": 144, "A": 233
+};
+
+const generateDeck = () => suits.flatMap(suit =>
+    ranks.map(rank => ({
+        suit,
+        rank,
+        // value: rankValues[rank],
+        power: getPower(rankValues[rank]),
+        value: rank + suit.charAt(0).toUpperCase(),
+    }))
+);
 
 export default generateDeck;
+
+function getPower(value) {
+    // Calculate the power of the card based on its value
+    // The power is calculated using the golden ratio
+    return Math.round(Math.sqrt(value * goldenRatio));
+}
 EOF
 
 cat <<EOF > "$PROJECT_DIR/score.js"

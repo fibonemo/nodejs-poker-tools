@@ -2,6 +2,7 @@
 node_modules
 backups
 *.lnk
+.env
 
 # ====================== NODEJS GITIGNORE ======================
 # Logs

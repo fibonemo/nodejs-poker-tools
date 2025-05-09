@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "description": "Software per gestire bankroll e strategie/percentuali per il gioco del poker.",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo 'ciao ciao' && exit 0",
     "_dev": "nodemon --ignore combos.json index.js",
     "dev": "nodemon index.js",
+    "start": "electron .",
     "_setup": "chmod +x setup.sh && bash ./setup.sh",
     "_backup": "chmod +x backup.sh && bash ./backup.sh"
   },
@@ -36,6 +37,7 @@
   },
   "homepage": "https://github.com/fibonemo/nodejs-poker-tools#readme",
   "devDependencies": {
+    "electron": "^36.1.0",
     "nodemon": "^3.1.10"
   }
 }
